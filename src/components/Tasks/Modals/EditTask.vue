@@ -20,7 +20,7 @@
       </q-card-section>
 
       <ModalButtons />
-      <pre>{{ taskToSubmit }}</pre>
+      <!-- <pre>{{ taskToSubmit }}</pre> -->
     </form>
   </q-card>  
 </template>
