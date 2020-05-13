@@ -58,7 +58,8 @@ module.exports = function (/* ctx */) {
         
         'QCard',
         'QCardSection',
-        'QCardActions'
+        'QCardActions',
+        'QBanner'
       ],
       directives: [
         'Ripple',

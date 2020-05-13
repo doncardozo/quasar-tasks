@@ -3,24 +3,24 @@ import { uid } from 'quasar'
 
 const state = {
     tasks: {
-        /*'ID1': {
-            name: 'Go to shop',
-            completed: false,
-            dueDate: '2020/05/10',
-            dueTime: '18:30'
-        },
-        'ID2': {
-            name: 'Get bananas',
-            completed: false,
-            dueDate: '2020/05/12',
-            dueTime: '14:00'
-        },
-        'ID3': {
-            name: 'Get apples',
-            completed: false,
-            dueDate: '2020/05/15',
-            dueTime: '16:00'
-        },*/
+        // 'ID1': {
+        //     name: 'Go to shop',
+        //     completed: true,
+        //     dueDate: '2020/05/10',
+        //     dueTime: '18:30'
+        // },
+        // 'ID2': {
+        //     name: 'Get bananas',
+        //     completed: false,
+        //     dueDate: '2020/05/12',
+        //     dueTime: '14:00'
+        // },
+        // 'ID3': {
+        //     name: 'Get apples',
+        //     completed: false,
+        //     dueDate: '2020/05/15',
+        //     dueTime: '16:00'
+        // },
     }
 }
 
@@ -54,9 +54,26 @@ const actions = {
 }
 
 const getters = {
-    tasks: (state) => {
-        return state.tasks
-    }
+    tasksTodo: (state) => {
+        let tasks = {}
+        Object.keys(state.tasks).forEach(key => {
+            let task = state.tasks[key]
+            if(!task.completed){
+               tasks[key] = task
+            }
+        })
+        return tasks
+    },
+    tasksCompleted: (state) => {
+        let tasks = {}
+        Object.keys(state.tasks).forEach(key => {
+            let task = state.tasks[key]
+            if(task.completed){
+               tasks[key] = task
+            }
+        })
+        return tasks
+    },
 }
 
 export default {
